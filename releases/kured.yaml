@@ -6,13 +6,12 @@ metadata:
   namespace: kube-system
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~1.5
 spec:
   releaseName: kured
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: kured
-    version: "1.5.0"
+    version: 1.5.0
   values:
     image:
       tag: 1.3.0
