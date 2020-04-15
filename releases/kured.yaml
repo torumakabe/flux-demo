@@ -12,8 +12,10 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: kured
-    version: "1.3"
+    version: 1.3
   values:
+    image:
+      tag: 1.3.0
     extraArgs:
       time-zone: "Asia/Tokyo"
       start-time: "09:00"
