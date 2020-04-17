@@ -6,7 +6,7 @@ metadata:
     app: node
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
 spec:
   selector:
     app: node
@@ -25,7 +25,7 @@ metadata:
     app: node
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
 spec:
   replicas: 1
   selector:
