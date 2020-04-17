@@ -2,6 +2,9 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
   name: statestore
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/ignore: "false"
 spec:
   type: state.redis
   metadata:

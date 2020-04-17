@@ -6,6 +6,7 @@ metadata:
   namespace: dapr-system
   annotations:
     fluxcd.io/automated: "true"
+    fluxcd.io/ignore: "false"
 spec:
   releaseName: kurdapred
   chart:
