@@ -8,11 +8,11 @@ metadata:
 spec:
   type: state.redis
   metadata:
-  - name: redisHost
-    value: redis-master:6379
-  - name: redisPassword
-    secretKeyRef:
-      name: redis-secret
-        key:  redis-password
+    - name: redisHost
+      value: redis-master:6379
+    - name: redisPassword
+      secretKeyRef:
+        name: redis-secret
+        key: redis-password
 auth:
   secretStore: kubernetes
