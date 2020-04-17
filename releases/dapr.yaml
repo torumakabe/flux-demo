@@ -6,9 +6,9 @@ metadata:
   namespace: dapr-system
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
 spec:
-  releaseName: kurdapred
+  releaseName: dapr
   chart:
     repository: https://daprio.azurecr.io/helm/v1/repo/
     name: dapr
