@@ -4,7 +4,6 @@ metadata:
   name: statestore
   namespace: dapr-dist-calc
   annotations:
-    fluxcd.io/automated: "true"
     fluxcd.io/ignore: "false"
 spec:
   type: state.redis
