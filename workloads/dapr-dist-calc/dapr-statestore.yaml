@@ -2,9 +2,10 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
   name: statestore
+  namespace: dapr-dist-calc
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   type: state.redis
   metadata:
