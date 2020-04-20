@@ -6,7 +6,6 @@ metadata:
     app: calculator-front-end
   namespace: dapr-dist-calc
   annotations:
-    fluxcd.io/automated: "true"
     fluxcd.io/ignore: "false"
 spec:
   selector:
