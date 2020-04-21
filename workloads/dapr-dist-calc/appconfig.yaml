@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: appconfig
+  namespace: dapr-dist-calc
+  annotations:
+    fluxcd.io/ignore: "false"
+spec:
+  tracing:
+    enabled: true
+    expandParams: true
+    includeBody: true
