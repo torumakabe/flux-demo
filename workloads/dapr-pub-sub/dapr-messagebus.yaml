@@ -2,7 +2,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
   name: messagebus
-  namespace: dapr-pub-sub
+  namespace: dapr-system
   annotations:
     fluxcd.io/ignore: "false"
 spec:
