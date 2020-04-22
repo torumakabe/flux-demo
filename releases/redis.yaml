@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: redis
-  namespace: dapr-system
+  namespace: dapr-app
   annotations:
     fluxcd.io/automated: "false"
     fluxcd.io/ignore: "false"

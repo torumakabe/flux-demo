@@ -2,14 +2,14 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
   name: messagebus
-  namespace: dapr-system
+  namespace: dapr-app
   annotations:
     fluxcd.io/ignore: "false"
 spec:
   type: pubsub.redis
   metadata:
     - name: redisHost
-      value: redis-master.dapr-system:6379
+      value: redis-master:6379
     - name: redisPassword
       secretKeyRef:
         name: redis-secret

@@ -4,7 +4,7 @@ metadata:
   name: addapp
   labels:
     app: add
-  namespace: dapr-dist-calc
+  namespace: dapr-app
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "true"

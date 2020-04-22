@@ -4,6 +4,7 @@ metadata:
   name: nodeapp
   labels:
     app: node
+  namespace: dapr-app
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "true"
