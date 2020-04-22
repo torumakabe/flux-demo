@@ -4,7 +4,7 @@ metadata:
   name: react-form
   labels:
     app: react-form
-  #  namespace: dapr
+  namespace: dapr
   annotations:
     fluxcd.io/ignore: "false"
 spec:
@@ -23,7 +23,7 @@ metadata:
   name: react-form
   labels:
     app: react-form
-  #  namespace: dapr
+  namespace: dapr
   annotations:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "true"
