@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-subscriber
+  labels:
+    app: node-subscriber
+  namespace: dapr-pub-sub
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-subscriber
+  template:
+    metadata:
+      labels:
+        app: node-subscriber
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/id: "node-subscriber"
+        dapr.io/port: "3000"
+        dapr.io/config: "appconfig"
+    spec:
+      containers:
+        - name: node-subscriber
+          image: dapriosamples/pubsub-node-subscriber:edge
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always
