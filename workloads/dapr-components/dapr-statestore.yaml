@@ -2,7 +2,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
   name: statestore
-  namespace: dapr
+  #  namespace: dapr
   annotations:
     fluxcd.io/ignore: "true"
 spec:

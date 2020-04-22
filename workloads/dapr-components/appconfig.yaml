@@ -2,7 +2,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
   name: appconfig
-  namespace: dapr
+  #  namespace: dapr
   annotations:
     fluxcd.io/ignore: "true"
 spec:
