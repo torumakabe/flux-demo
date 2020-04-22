@@ -5,7 +5,7 @@ metadata:
   name: redis
   namespace: dapr-system
   annotations:
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
     fluxcd.io/ignore: "false"
 spec:
   releaseName: redis
