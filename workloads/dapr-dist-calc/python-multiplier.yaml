@@ -4,7 +4,7 @@ metadata:
   name: multiplyapp
   labels:
     app: multiply
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "true"

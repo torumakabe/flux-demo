@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: dapr
-  namespace: dapr-system
+  namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "false"

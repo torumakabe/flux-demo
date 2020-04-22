@@ -4,7 +4,7 @@ metadata:
   name: divideapp
   labels:
     app: divide
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "true"

@@ -4,7 +4,7 @@ metadata:
   name: calculator-front-end
   labels:
     app: calculator-front-end
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/ignore: "true"
 spec:
@@ -23,7 +23,7 @@ metadata:
   name: calculator-front-end
   labels:
     app: calculator-front-end
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "true"

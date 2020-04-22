@@ -4,7 +4,7 @@ metadata:
   name: zipkin
   labels:
     app: zipkin
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "true"
@@ -31,7 +31,7 @@ metadata:
   name: zipkin
   labels:
     app: zipkin
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/ignore: "true"
 spec:
@@ -48,7 +48,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
   name: zipkin
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/ignore: "true"
 spec:
@@ -57,4 +57,4 @@ spec:
     - name: enabled
       value: "true"
     - name: exporterAddress
-      value: "http://zipkin.dapr-app.svc.cluster.local:9411/api/v2/spans"
+      value: "http://zipkin.dapr.svc.cluster.local:9411/api/v2/spans"

@@ -4,7 +4,7 @@ metadata:
   name: pythonapp
   labels:
     app: python
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/ignore: "true"

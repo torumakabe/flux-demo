@@ -4,7 +4,7 @@ metadata:
   name: python-subscriber
   labels:
     app: python-subscriber
-  namespace: dapr-app
+  namespace: dapr
   annotations:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "true"
