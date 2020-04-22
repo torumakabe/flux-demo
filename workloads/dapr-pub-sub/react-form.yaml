@@ -40,6 +40,7 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/id: "react-form"
         dapr.io/port: "8080"
+        dapr.io/config: "appconfig"
     spec:
       containers:
         - name: react-form
