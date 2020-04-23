@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: dapr
+  namespace: dapr-system
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/ignore: "false"
+spec:
+  releaseName: dapr
+  chart:
+    repository: https://daprio.azurecr.io/helm/v1/repo/
+    name: dapr
+    version: 0.3.0
