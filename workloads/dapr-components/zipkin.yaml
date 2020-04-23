@@ -7,7 +7,7 @@ metadata:
   namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   replicas: 1
   selector:
@@ -33,7 +33,7 @@ metadata:
     app: zipkin
   namespace: dapr
   annotations:
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   selector:
     app: zipkin
@@ -50,7 +50,7 @@ metadata:
   name: zipkin
   namespace: dapr
   annotations:
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   type: exporters.zipkin
   metadata:

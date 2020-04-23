@@ -4,7 +4,7 @@ metadata:
   name: appconfig
   namespace: dapr
   annotations:
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   tracing:
     enabled: true
