@@ -1,0 +1,14 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: native
+  namespace: dapr
+  annotations:
+    fluxcd.io/ignore: "false"
+spec:
+  type: exporters.native
+  metadata:
+    - name: enabled
+      value: "true"
+    - name: agentEndpoint
+      value: dapr-localforwarder.dapr.svc.cluster.local:55678

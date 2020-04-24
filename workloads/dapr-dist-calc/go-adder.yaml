@@ -7,7 +7,7 @@ metadata:
   namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   replicas: 1
   selector:
@@ -21,7 +21,7 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/id: "addapp"
         dapr.io/port: "6000"
-        dapr.io/config: "appconfig"
+        dapr.io/config: "tracing"
     spec:
       containers:
         - name: add

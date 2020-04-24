@@ -4,7 +4,7 @@ metadata:
   name: messagebus
   namespace: dapr
   annotations:
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   type: pubsub.redis
   metadata:

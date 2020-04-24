@@ -1,0 +1,53 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: dapr-localforwarder
+  labels:
+    app: dapr-localforwarder
+  namespace: dapr
+  annotations:
+    fluxcd.io/ignore: "false"
+spec:
+  selector:
+    app: dapr-localforwarder
+  ports:
+    - protocol: TCP
+      port: 55678
+      targetPort: 55678
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dapr-localforwarder
+  labels:
+    app: dapr-localforwarder
+  namespace: dapr
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
+spec:
+  replicas: 1 # Adjust replica # based on your telemetry volume
+  selector:
+    matchLabels:
+      app: dapr-localforwarder
+  template:
+    metadata:
+      labels:
+        app: dapr-localforwarder
+    spec:
+      containers:
+        - name: dapr-localforwarder
+          image: docker.io/daprio/dapr-localforwarder:0.1-beta1
+          ports:
+            - containerPort: 55678
+          imagePullPolicy: Always
+          env:
+            - name: APPINSIGHTS_INSTRUMENTATIONKEY
+              secretKeyRef:
+                name: appinsights-secret
+                key: appinsights-ikey
+            - name: APPINSIGHTS_LIVEMETRICSSTREAMAUTHENTICATIONAPIKEY
+              secretKeyRef:
+                name: appinsights-secret
+                key: appinsights-apikey

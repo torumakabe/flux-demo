@@ -6,7 +6,7 @@ metadata:
     app: calculator-front-end
   namespace: dapr
   annotations:
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   selector:
     app: calculator-front-end
@@ -26,7 +26,7 @@ metadata:
   namespace: dapr
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "true"
+    fluxcd.io/ignore: "false"
 spec:
   replicas: 1
   selector:
@@ -40,7 +40,7 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/id: "calculator-front-end"
         dapr.io/port: "8080"
-        dapr.io/config: "appconfig"
+        dapr.io/config: "tracing"
     spec:
       containers:
         - name: calculator-front-end
