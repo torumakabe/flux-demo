@@ -2,6 +2,8 @@ apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
   name: tracing
+  annotations:
+    fluxcd.io/ignore: "false"
 spec:
   tracing:
     enabled: true
