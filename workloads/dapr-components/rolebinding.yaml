@@ -3,7 +3,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: dapr-secret-reader
   annotations:
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
 subjects:
   - kind: ServiceAccount
     name: default
