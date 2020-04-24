@@ -43,7 +43,7 @@ spec:
             - containerPort: 55678
           imagePullPolicy: Always
           env:
-            - name: APPINSIGHTS_INSTRUMENTATIONKE
+            - name: APPINSIGHTS_INSTRUMENTATIONKEY
               valueFrom:
                 secretKeyRef:
                   name: appinsights-secret
