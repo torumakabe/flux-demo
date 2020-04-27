@@ -46,10 +46,10 @@ spec:
             - name: APPINSIGHTS_INSTRUMENTATIONKEY
               valueFrom:
                 secretKeyRef:
-                  name: appinsights-secret
+                  name: appinsights
                   key: appinsights-ikey
             - name: APPINSIGHTS_LIVEMETRICSSTREAMAUTHENTICATIONAPIKEY
               valueFrom:
                 secretKeyRef:
-                  name: appinsights-secret
+                  name: appinsights
                   key: appinsights-apikey

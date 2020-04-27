@@ -12,7 +12,7 @@ spec:
       value: redis-master:6379
     - name: redisPassword
       secretKeyRef:
-        name: redis-secret
+        name: redis
         key: redis-password
 auth:
   secretStore: kubernetes
