@@ -1,0 +1,24 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: consul
+  namespace: consul
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/ignore: "false"
+spec:
+  releaseName: consul
+  chart:
+    repository: https://helm.releases.hashicorp.com/
+    name: consul
+    version: 0.21.0
+  values:
+    global:
+      name: consul
+    connectInject:
+      enabled: true
+    client:
+      enabled: true
+      grpc: true
+    syncCatalog:
+      enabled: true
