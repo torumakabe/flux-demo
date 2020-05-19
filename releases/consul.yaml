@@ -22,3 +22,5 @@ spec:
       grpc: true
     syncCatalog:
       enabled: true
+    server:
+      storageClass: managed-premium-bind-wait
