@@ -55,6 +55,9 @@ spec:
           kubernetes-cluster:
             gnetId: 6417
             datasource: Prometheus
+          node-exporter-full:
+            gnetId: 1860
+            datasource: Prometheus
     prometheus-node-exporter:
       service:
         port: 30206
