@@ -71,10 +71,6 @@ spec:
           node-exporter-full:
             gnetId: 1860
             datasource: Prometheus
-    #    prometheus-node-exporter:
-    #      service:
-    #        port: 30206
-    #        targetPort: 30206
     kubeEtcd:
       enabled: false
     kubeControllerManager:
