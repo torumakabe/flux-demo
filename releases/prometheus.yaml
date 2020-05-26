@@ -26,7 +26,7 @@ spec:
           - job_name: node
             static_configs:
               - targets: ["localhost:9100"]
-        serviceMonitorSelector: {}
+        serviceMonitorSelector: {} # workaround https://github.com/coreos/prometheus-operator/issues/2840
     prometheus-node-exporter:
       podLabels:
         jobLabel: node-exporter
