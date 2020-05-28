@@ -1,0 +1,29 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: podinfo
+  annotations:
+    fluxcd.io/ignore: "false"
+spec:
+  releaseName: podinfo
+  chart:
+    repository: https://stefanprodan.github.io/podinfo/
+    name: podinfo
+    version: 4.0.0
+  values:
+    image:
+      repository: stefanprodan/podinfo
+      tag: 4.0.0
+    service:
+      enabled: true
+      type: ClusterIP
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          proxy_set_header l5d-dst-override $service_name.$namespace.svc.cluster.local:9898;
+          proxy_hide_header l5d-remote-ip;
+          proxy_hide_header l5d-server-id;
+      path: /
