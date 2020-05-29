@@ -5,10 +5,6 @@ metadata:
   namespace: podinfo
   annotations:
     fluxcd.io/ignore: "false"
-    consul.hashicorp.com/connect-inject: "true"
-    consul.hashicorp.com/connect-service: "frontend"
-    consul.hashicorp.com/connect-service-port: "9898"
-    consul.hashicorp.com/connect-service-upstreams: "backend:1234"
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -25,6 +21,10 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9797"
+        consul.hashicorp.com/connect-inject: "true"
+        consul.hashicorp.com/connect-service: "frontend"
+        consul.hashicorp.com/connect-service-port: "9898"
+        consul.hashicorp.com/connect-service-upstreams: "backend:1234"
       labels:
         app: frontend
     spec:
