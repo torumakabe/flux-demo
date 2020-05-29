@@ -8,7 +8,7 @@ metadata:
     consul.hashicorp.com/connect-inject: "true"
     consul.hashicorp.com/connect-service: "frontend"
     consul.hashicorp.com/connect-service-port: "9898"
-    consul.hashicorp.com/connect-service-upstreams: "backend:9898"
+    consul.hashicorp.com/connect-service-upstreams: "backend:1234"
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -47,7 +47,7 @@ spec:
             - ./podinfo
             - --port=9898
             - --port-metrics=9797
-            - --level=info
+            - --level=debug
             - --backend-url=http://backend:9898/echo
           env:
             - name: PODINFO_UI_COLOR
