@@ -41,6 +41,8 @@ kind: Service
 metadata:
   name: web
   namespace: consul
+  annotations:
+    fluxcd.io/ignore: "true"
 spec:
   selector:
     app: web
