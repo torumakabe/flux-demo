@@ -18,4 +18,4 @@ spec:
       replicaCount: 2
       deploymentAnnotations:
         consul.hashicorp.com/connect-inject: "true"
-        consul.hashicorp.com/connect-service-upstreams: "localhost:12345"
+        consul.hashicorp.com/connect-service-upstreams: "frontend:12345"
