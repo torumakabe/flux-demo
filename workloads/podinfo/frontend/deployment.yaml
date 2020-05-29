@@ -47,7 +47,7 @@ spec:
             - ./podinfo
             - --port=9898
             - --port-metrics=9797
-            - --level=debug
+            - --level=info
             - --backend-url=http://backend:9898/echo
           env:
             - name: PODINFO_UI_COLOR
