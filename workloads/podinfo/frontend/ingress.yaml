@@ -14,7 +14,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: frontend
+              serviceName: localhost
               servicePort: 12345
 ---
 apiVersion: v1
