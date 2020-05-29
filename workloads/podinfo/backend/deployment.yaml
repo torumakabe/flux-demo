@@ -1,14 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: backend
   namespace: podinfo
   annotations:
     fluxcd.io/ignore: "false"
     consul.hashicorp.com/connect-inject: "true"
-    consul.hashicorp.com/connect-service: "frontend"
+    consul.hashicorp.com/connect-service: "backend"
     consul.hashicorp.com/connect-service-port: "9898"
-    consul.hashicorp.com/connect-service-upstreams: "backend:9898"
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -19,18 +18,18 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: frontend
+      app: backend
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9797"
       labels:
-        app: frontend
+        app: backend
     spec:
-      serviceAccountName: frontend
+      serviceAccountName: backend
       containers:
-        - name: frontend
+        - name: backend
           image: stefanprodan/podinfo:4.0.1
           imagePullPolicy: IfNotPresent
           ports:
@@ -47,8 +46,9 @@ spec:
             - ./podinfo
             - --port=9898
             - --port-metrics=9797
+            - --grpc-port=9999
+            - --grpc-service-name=backend
             - --level=info
-            - --backend-url=http://backend:9898/echo
           env:
             - name: PODINFO_UI_COLOR
               value: "#34577c"
@@ -72,8 +72,8 @@ spec:
             timeoutSeconds: 5
           resources:
             limits:
-              cpu: 1000m
-              memory: 128Mi
+              cpu: 2000m
+              memory: 512Mi
             requests:
               cpu: 100m
               memory: 32Mi
