@@ -25,5 +25,5 @@ metadata:
   annotations:
     fluxcd.io/ignore: "false"
 spec:
-  externalName: 127.0.0.1
+  externalName: localhost
   type: ExternalName
