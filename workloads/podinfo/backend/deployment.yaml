@@ -5,6 +5,7 @@ metadata:
   namespace: podinfo
   annotations:
     fluxcd.io/ignore: "false"
+    fluxcd.io/tag.backend: semver:~4.0
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
