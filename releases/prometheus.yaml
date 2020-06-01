@@ -1,3 +1,4 @@
+---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -23,21 +24,21 @@ spec:
                 requests:
                   storage: 5Gi
         additionalScrapeConfigs:
-          - job_name: node
-            static_configs:
-              - targets: ["localhost:9100"]
+        - job_name: node
+          static_configs:
+          - targets: ["localhost:9100"]
         serviceMonitorSelector: {} # workaround https://github.com/coreos/prometheus-operator/issues/2840
     prometheus-node-exporter:
       image:
         repository: quay.io/prometheus/node-exporter
-        tag: v1.0.0
+        tag: master
       podLabels:
         jobLabel: node-exporter
       extraArgs:
-        - --collector.systemd
-        - --collector.processes
-        - --collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/)
-        - --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$
+      - --collector.systemd
+      - --collector.processes
+      - --collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/)
+      - --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$
     alertmanager:
       alertmanagerSpec:
         storage:
@@ -58,14 +59,14 @@ spec:
         dashboardproviders.yaml:
           apiVersion: 1
           providers:
-            - name: "sample"
-              orgId: 1
-              folder: "sample"
-              type: file
-              disableDeletion: true
-              editable: true
-              options:
-                path: /var/lib/grafana/dashboards/sample
+          - name: "sample"
+            orgId: 1
+            folder: "sample"
+            type: file
+            disableDeletion: true
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/sample
       dashboards:
         sample:
           kubernetes-cluster:
