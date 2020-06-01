@@ -5,6 +5,7 @@ metadata:
   namespace: podinfo
   annotations:
     fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
     fluxcd.io/tag.frontend: semver:~4.0
 spec:
   minReadySeconds: 3
