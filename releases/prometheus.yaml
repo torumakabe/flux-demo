@@ -29,7 +29,7 @@ spec:
         serviceMonitorSelector: {} # workaround https://github.com/coreos/prometheus-operator/issues/2840
     prometheus-node-exporter:
       image:
-        repository: quay.io/prometheus/node-exporter/
+        repository: quay.io/prometheus/node-exporter
         tag: v1.0.0
       podLabels:
         jobLabel: node-exporter
