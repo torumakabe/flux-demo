@@ -5,12 +5,13 @@ metadata:
   namespace: podinfo
   annotations:
     fluxcd.io/ignore: "true"
+    filter.fluxcd.io/chart-image: semver:~0.4
 spec:
   releaseName: podinfo
   chart:
     repository: https://stefanprodan.github.io/podinfo/
     name: podinfo
-    version: 4.0.0
+    version: 4.0.2
   values:
     image:
       repository: stefanprodan/podinfo

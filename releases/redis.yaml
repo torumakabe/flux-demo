@@ -12,7 +12,7 @@ spec:
   chart:
     repository: https://charts.bitnami.com/bitnami/
     name: redis
-    version: 10.6.10
+    version: 10.6.18
   values:
     existingSecret: "redis"
     existingSecretPasswordKey: "redis-password"
