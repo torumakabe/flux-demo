@@ -12,4 +12,4 @@ spec:
   chart:
     repository: https://daprio.azurecr.io/helm/v1/repo/
     name: dapr
-    version: 0.4.1
+    version: 0.4.2
