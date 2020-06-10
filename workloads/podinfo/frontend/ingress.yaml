@@ -8,7 +8,7 @@ metadata:
   annotations:
     fluxcd.io/ignore: "false"
     kubernetes.io/ingress.class: "nginx"
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   tls:
     - hosts:
@@ -37,15 +37,15 @@ spec:
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-staging
+  name: letsencrypt-prod
   annotations:
     fluxcd.io/ignore: "false"
 spec:
   acme:
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     email: tomakabe@microsoft.com
     privateKeySecretRef:
-      name: letsencrypt-staging
+      name: letsencrypt-prod
     solvers:
       - http01:
           ingress:
