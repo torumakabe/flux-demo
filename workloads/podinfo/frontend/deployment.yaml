@@ -51,7 +51,7 @@ spec:
             - --port=9898
             - --port-metrics=9797
             - --level=info
-            - --backend-url=http://backend:1234/echo
+            - --backend-url=http://localhost:1234/echo
           env:
             - name: PODINFO_UI_COLOR
               value: "#34577c"
