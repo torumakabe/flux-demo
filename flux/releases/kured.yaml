@@ -5,17 +5,20 @@ metadata:
   name: kured
   namespace: kube-system
   annotations:
+    fluxcd.io/ignore: "true"
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~1.4
+    filter.fluxcd.io/chart-image: semver:~1.5
+
 spec:
   releaseName: kured
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
+    repository: https://weaveworks.github.io/kured/
     name: kured
-    version: 1.5.1
+    version: 2.2.0
   values:
     image:
-      tag: 1.4.0
+      repository: weaveworks/kured
+      tag: 1.5.0
     extraArgs:
       time-zone: "Asia/Tokyo"
       start-time: "09:00"
