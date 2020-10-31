@@ -39,7 +39,7 @@ kind: ClusterIssuer
 metadata:
   name: letsencrypt-prod
   annotations:
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
