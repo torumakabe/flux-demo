@@ -7,7 +7,7 @@ metadata:
   annotations:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.backend: semver:~4.0
+    fluxcd.io/tag.backend: semver:~5.0
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -30,7 +30,7 @@ spec:
       serviceAccountName: backend
       containers:
       - name: backend
-        image: stefanprodan/podinfo:4.0.5
+        image: stefanprodan/podinfo:5.0.3
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
