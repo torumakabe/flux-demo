@@ -6,6 +6,7 @@ metadata:
   namespace: monitoring
   annotations:
     fluxcd.io/automated: "true"
+    fluxcd.io/ignore: "false"
     filter.fluxcd.io/prometheus-node-exporter: semver:~v1.0
 spec:
   releaseName: prometheus

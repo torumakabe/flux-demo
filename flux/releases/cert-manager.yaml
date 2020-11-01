@@ -5,7 +5,7 @@ metadata:
   namespace: ingress-nginx
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
 spec:
   releaseName: cert-manager
   chart:
