@@ -24,9 +24,6 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "9797"
-        consul.hashicorp.com/connect-inject: "true"
-        consul.hashicorp.com/connect-service: "backend"
-        consul.hashicorp.com/connect-service-port: "9898"
       labels:
         app: backend
     spec:
