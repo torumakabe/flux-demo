@@ -4,7 +4,7 @@ metadata:
   name: backend
   namespace: podinfo
   annotations:
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

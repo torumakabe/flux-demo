@@ -4,7 +4,7 @@ metadata:
   name: managed-premium-bind-wait
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/ignore: "false"
+    fluxcd.io/ignore: "true"
     # temporarily comment out https://github.com/Azure/AKS/issues/1537
     # storageclass.beta.kubernetes.io/is-default-class: "true"
 provisioner: kubernetes.io/azure-disk
