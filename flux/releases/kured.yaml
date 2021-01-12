@@ -17,7 +17,7 @@ spec:
     version: 2.3.1
   values:
     image:
-      repository: weaveworks/kured
+      repository: weaveworks/kured:1.6.1
       # tag: 1.6.1
     extraArgs:
       time-zone: "Asia/Tokyo"
